@@ -331,16 +331,16 @@
              multiple dimensions, including enhanced visual quality and more natural motion dynamics. However, these models still
               suffer from two major limitations: (1) High inference overhead, requiring approximately 10 minutes to synthesize a
              28-step video on a single H100 GPU; (2) Depressing portrait video synthesis, such as unnatural facial expressions and
-              movements. To address these limitations, we propose \textbf{MagicDistillation}, a novel step-distillation framework 
+              movements. To address these limitations, we propose MagicDistillation, a novel step-distillation framework 
               that can make large VDMs generate better portrait video synthesis even with significantly reduced inference overhead.
-             The proposed \textbf{MagicDistillation} framework mainly includes three major contributions. First, we designed a novel
+             The proposed MagicDistillation framework mainly includes three major contributions. First, we designed a novel
             weak-to-strong (W2S) distribution matching method that leverages one weak LoRA and one strong LoRA together to achieve
              faster generation and robust distillation of large VDMs, while conventional distribution matching distillation (DMD)
-            usually generates uncontrollable videos and fails to distill large VDMs. \textcolor{C3}{\textit{Second}}, to further
+            usually generates uncontrollable videos and fails to distill large VDMs. Second, to further
             improve generation quality and generalization of the distilled few-step generator, we propose a data-centric regularization
             framework, which encourages the generative data distribution to closely approximate a designed mixed domain regularization
              dataset with a generative data regularization technique, requiring computing the gradients with respect to generative data
-            rather than model weights. \textcolor{C3}{\textit{Third}}, our extensive experimental results on portrait video synthesis
+            rather than model weights. Third, our extensive experimental results on portrait video synthesis
             demonstrate that MagicDistillation can significantly reduce inference overhead and improve portrait video quality,
             outperforming Euler, LCM, and DMD baselines. Notably, in terms of both visualization and I2V-VBench evaluations, to the
            best of our knowledge, we are the first to achieve 4-step portrait video synthesis that can beat SOTA open-source VDMs,
