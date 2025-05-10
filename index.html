@@ -326,7 +326,25 @@
       <div class="column is-four-fifths">
         <div class="content has-text-justified">
           <p>
-            Recently, open-source video diffusion models (VDMs), such as WanX, Magic141 and HunyuanVideo, have been scaled to over 10 billion parameters. These large-scale VDMs have demonstrated significant improvements over smaller-scale VDMs across multiple dimensions, including enhanced visual quality and more natural motion dynamics. However, these models face two major limitations: (1) High inference overhead: Large-scale VDMs require approximately 10 minutes to synthesize a 28-step video on a single H100 GPU; (2) Depressing portrait video synthesis: Recent models like WanX-I2V and HunyuanVideo-I2V still often produce unnatural facial expressions and movements in synthesized talking videos. To address these limitations, we propose \textbf{MagicDistillation}, a novel step-distillation framework that can make large VDMs generate better portrait video synthesis even with significantly reduced inference overhead. The proposed \textbf{MagicDistillation} framework mainly includes three major contributions. First, we designed a novel weak-to-strong (W2S) distribution matching method that leverages one weak LoRA and one strong LoRA together to achieve faster generation and robust distillation of large VDMs, while conventional distribution matching distillation (DMD) usually generate uncontrollable videos and fails for distilling large VDMs. Second, to further improve portrait video synthesis performance of the distilled few-step generator, we train the pretrained high-quality VDM by utilizing a diverse combination of general, anime, and talking video datasets. Third, our extensitive experimental results on portrait video synthesis demonstrate the significantly reduced inference cost and improved video quality of MagicDistillation. Our method surpasses Euler, LCM, and DMD baselines. Moreover, in terms of both visualization and I2V-VBench evaluations, our 4-step VDM even outperforms SOTA open-source VDMs which requires many-step generation and high inference overhead, including WanX-I2V (14B) and HunyuanVideo-I2V (13B).
+            Recently, open-source video diffusion models (VDMs), such as WanX, Magic141 and HunyuanVideo, have been scaled to over 10
+            billion parameters. These large-scale VDMs have demonstrated significant improvements over smaller-scale VDMs across
+             multiple dimensions, including enhanced visual quality and more natural motion dynamics. However, these models still
+              suffer from two major limitations: (1) High inference overhead, requiring approximately 10 minutes to synthesize a
+             28-step video on a single H100 GPU; (2) Depressing portrait video synthesis, such as unnatural facial expressions and
+              movements. To address these limitations, we propose \textbf{MagicDistillation}, a novel step-distillation framework 
+              that can make large VDMs generate better portrait video synthesis even with significantly reduced inference overhead.
+             The proposed \textbf{MagicDistillation} framework mainly includes three major contributions. First, we designed a novel
+            weak-to-strong (W2S) distribution matching method that leverages one weak LoRA and one strong LoRA together to achieve
+             faster generation and robust distillation of large VDMs, while conventional distribution matching distillation (DMD)
+            usually generates uncontrollable videos and fails to distill large VDMs. \textcolor{C3}{\textit{Second}}, to further
+            improve generation quality and generalization of the distilled few-step generator, we propose a data-centric regularization
+            framework, which encourages the generative data distribution to closely approximate a designed mixed domain regularization
+             dataset with a generative data regularization technique, requiring computing the gradients with respect to generative data
+            rather than model weights. \textcolor{C3}{\textit{Third}}, our extensive experimental results on portrait video synthesis
+            demonstrate that MagicDistillation can significantly reduce inference overhead and improve portrait video quality,
+            outperforming Euler, LCM, and DMD baselines. Notably, in terms of both visualization and I2V-VBench evaluations, to the
+           best of our knowledge, we are the first to achieve 4-step portrait video synthesis that can beat SOTA open-source VDMs,
+           including WanX-I2V (14B) and HunyuanVideo-I2V (13B), which even require many-step generation and times higher inference overhead. 
           </p>
         </div>
       </div>
